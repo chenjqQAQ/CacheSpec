@@ -1,0 +1,526 @@
+{
+  "tokenizer": "Qwen/Qwen3-32B",
+  "counting": "effective prompt_action/messages after LASER format enforcement, Qwen chat template, add_generation_prompt=True, enable_thinking=False",
+  "tasks": {
+    "CodeFinQA": {
+      "file": "data/gencache/cache_friendly_v2_cacheable/CodeFinQA_grouped_optimized_cacheable.jsonl",
+      "sample_token_summary": {
+        "count": 969,
+        "min": 258,
+        "p10": 762.0,
+        "p25": 954,
+        "median": 1109,
+        "p75": 1339,
+        "p90": 1510.0,
+        "p95": 1608.0,
+        "p99": 1870.0,
+        "max": 2455,
+        "mean": 1131.22
+      },
+      "sample_bucket_counts": {
+        "<= 512": 18,
+        "513-1024": 324,
+        "1025-1536": 544,
+        "1537-2048": 78,
+        "2049-3072": 5
+      },
+      "group_count": 193,
+      "group_size_summary": {
+        "count": 193,
+        "min": 1,
+        "p10": 3.0,
+        "p25": 4,
+        "median": 5,
+        "p75": 5,
+        "p90": 8.8,
+        "p95": 10.0,
+        "p99": 14.08,
+        "max": 15,
+        "mean": 5.02
+      },
+      "group_mean_token_summary": {
+        "count": 193,
+        "min": 258,
+        "p10": 761.36,
+        "p25": 938,
+        "median": 1109.5,
+        "p75": 1323,
+        "p90": 1532.75,
+        "p95": 1604.0,
+        "p99": 1870.05,
+        "max": 2454.2,
+        "mean": 1129.49
+      },
+      "group_median_token_summary": {
+        "count": 193,
+        "min": 258,
+        "p10": 761.4,
+        "p25": 938.0,
+        "median": 1109,
+        "p75": 1323.0,
+        "p90": 1532.8,
+        "p95": 1603.8,
+        "p99": 1870.08,
+        "max": 2454,
+        "mean": 1129.4
+      },
+      "group_mean_bucket_counts": {
+        "1025-1536": 103,
+        "1537-2048": 18,
+        "2049-3072": 1,
+        "513-1024": 66,
+        "<= 512": 5
+      },
+      "longest_10_samples": [
+        {
+          "idx": 26,
+          "id": "train-010137-variant-2",
+          "group": "CodeFinQA:train-010137",
+          "tokens": 2455
+        },
+        {
+          "idx": 379,
+          "id": "train-010137-variant-0",
+          "group": "CodeFinQA:train-010137",
+          "tokens": 2455
+        },
+        {
+          "idx": 72,
+          "id": "train-010137",
+          "group": "CodeFinQA:train-010137",
+          "tokens": 2454
+        },
+        {
+          "idx": 135,
+          "id": "train-010137-variant-3",
+          "group": "CodeFinQA:train-010137",
+          "tokens": 2454
+        },
+        {
+          "idx": 363,
+          "id": "train-010137-variant-1",
+          "group": "CodeFinQA:train-010137",
+          "tokens": 2453
+        },
+        {
+          "idx": 312,
+          "id": "train-013718-variant-0",
+          "group": "CodeFinQA:train-013718",
+          "tokens": 1872
+        },
+        {
+          "idx": 109,
+          "id": "train-013718-variant-2",
+          "group": "CodeFinQA:train-013718",
+          "tokens": 1871
+        },
+        {
+          "idx": 416,
+          "id": "train-013718-variant-3",
+          "group": "CodeFinQA:train-013718",
+          "tokens": 1871
+        },
+        {
+          "idx": 464,
+          "id": "train-013694-variant-2",
+          "group": "CodeFinQA:train-013694",
+          "tokens": 1871
+        },
+        {
+          "idx": 62,
+          "id": "train-013718",
+          "group": "CodeFinQA:train-013718",
+          "tokens": 1870
+        }
+      ]
+    },
+    "CodeTAT-QA": {
+      "file": "data/gencache/cache_friendly_v2_cacheable/CodeTAT-QA_grouped_optimized_cacheable.jsonl",
+      "sample_token_summary": {
+        "count": 3836,
+        "min": 347,
+        "p10": 414.5,
+        "p25": 460.75,
+        "median": 557.0,
+        "p75": 714.5,
+        "p90": 942.0,
+        "p95": 1053.25,
+        "p99": 1383.0,
+        "max": 1572,
+        "mean": 622.86
+      },
+      "sample_bucket_counts": {
+        "<= 512": 1498,
+        "513-1024": 2112,
+        "1025-1536": 208,
+        "1537-2048": 18
+      },
+      "group_count": 470,
+      "group_size_summary": {
+        "count": 470,
+        "min": 1,
+        "p10": 3.0,
+        "p25": 4.0,
+        "median": 5.0,
+        "p75": 13.0,
+        "p90": 15.0,
+        "p95": 15.0,
+        "p99": 15.0,
+        "max": 15,
+        "mean": 8.16
+      },
+      "group_mean_token_summary": {
+        "count": 470,
+        "min": 348,
+        "p10": 417.98,
+        "p25": 468.95,
+        "median": 556.86,
+        "p75": 718.6,
+        "p90": 905.96,
+        "p95": 1032.06,
+        "p99": 1295.19,
+        "max": 1568.857142857143,
+        "mean": 621.13
+      },
+      "group_median_token_summary": {
+        "count": 470,
+        "min": 348.0,
+        "p10": 418.0,
+        "p25": 469.62,
+        "median": 556.5,
+        "p75": 718.5,
+        "p90": 906.3,
+        "p95": 1032.3,
+        "p99": 1295.07,
+        "max": 1569.0,
+        "mean": 621.1
+      },
+      "group_mean_bucket_counts": {
+        "1025-1536": 23,
+        "1537-2048": 2,
+        "513-1024": 263,
+        "<= 512": 182
+      },
+      "longest_10_samples": [
+        {
+          "idx": 2123,
+          "id": "train-008770-variant-1",
+          "group": "37ca940aa1b6",
+          "tokens": 1572
+        },
+        {
+          "idx": 2315,
+          "id": "train-008770-variant-3",
+          "group": "37ca940aa1b6",
+          "tokens": 1571
+        },
+        {
+          "idx": 875,
+          "id": "train-008768-variant-3",
+          "group": "37ca940aa1b6",
+          "tokens": 1570
+        },
+        {
+          "idx": 2797,
+          "id": "train-008770-variant-0",
+          "group": "37ca940aa1b6",
+          "tokens": 1570
+        },
+        {
+          "idx": 514,
+          "id": "train-008769-variant-1",
+          "group": "37ca940aa1b6",
+          "tokens": 1569
+        },
+        {
+          "idx": 840,
+          "id": "train-008769-variant-3",
+          "group": "37ca940aa1b6",
+          "tokens": 1569
+        },
+        {
+          "idx": 1876,
+          "id": "train-008768-variant-0",
+          "group": "37ca940aa1b6",
+          "tokens": 1569
+        },
+        {
+          "idx": 2511,
+          "id": "train-008770-variant-2",
+          "group": "37ca940aa1b6",
+          "tokens": 1569
+        },
+        {
+          "idx": 1,
+          "id": "train-008769-variant-0",
+          "group": "37ca940aa1b6",
+          "tokens": 1568
+        },
+        {
+          "idx": 46,
+          "id": "train-008769-variant-2",
+          "group": "37ca940aa1b6",
+          "tokens": 1568
+        }
+      ]
+    },
+    "SEC-NUM": {
+      "file": "data/gencache/cache_friendly_v2_cacheable/SEC-NUM_grouped_optimized_cacheable.jsonl",
+      "sample_token_summary": {
+        "count": 2766,
+        "min": 403,
+        "p10": 1118.5,
+        "p25": 1337.0,
+        "median": 1589.0,
+        "p75": 1842.75,
+        "p90": 2140.5,
+        "p95": 2314.75,
+        "p99": 2664.35,
+        "max": 4094,
+        "mean": 1613.14
+      },
+      "sample_bucket_counts": {
+        "<= 512": 8,
+        "513-1024": 153,
+        "1025-1536": 1049,
+        "1537-2048": 1152,
+        "2049-3072": 392,
+        "3073-4096": 12
+      },
+      "group_count": 627,
+      "group_size_summary": {
+        "count": 627,
+        "min": 1,
+        "p10": 2.0,
+        "p25": 3.0,
+        "median": 4,
+        "p75": 5.0,
+        "p90": 8.0,
+        "p95": 11.0,
+        "p99": 13.0,
+        "max": 14,
+        "mean": 4.41
+      },
+      "group_mean_token_summary": {
+        "count": 627,
+        "min": 403,
+        "p10": 1081.6,
+        "p25": 1289.0,
+        "median": 1570,
+        "p75": 1813.75,
+        "p90": 2141.0,
+        "p95": 2293.5,
+        "p99": 2778.29,
+        "max": 4088.4285714285716,
+        "mean": 1587.81
+      },
+      "group_median_token_summary": {
+        "count": 627,
+        "min": 403,
+        "p10": 1081.6,
+        "p25": 1289.0,
+        "median": 1569.5,
+        "p75": 1813.5,
+        "p90": 2140.5,
+        "p95": 2293.05,
+        "p99": 2778.35,
+        "max": 4088,
+        "mean": 1587.67
+      },
+      "group_mean_bucket_counts": {
+        "1025-1536": 246,
+        "1537-2048": 244,
+        "2049-3072": 84,
+        "3073-4096": 4,
+        "513-1024": 46,
+        "<= 512": 3
+      },
+      "longest_10_samples": [
+        {
+          "idx": 2621,
+          "id": "test-000319-variant-0",
+          "group": "71fe16745b08",
+          "tokens": 4094
+        },
+        {
+          "idx": 1880,
+          "id": "test-000319-variant-2",
+          "group": "71fe16745b08",
+          "tokens": 4091
+        },
+        {
+          "idx": 2536,
+          "id": "test-000319",
+          "group": "71fe16745b08",
+          "tokens": 4091
+        },
+        {
+          "idx": 860,
+          "id": "train-003510-variant-1",
+          "group": "71fe16745b08",
+          "tokens": 4088
+        },
+        {
+          "idx": 411,
+          "id": "train-003510-variant-2",
+          "group": "71fe16745b08",
+          "tokens": 4085
+        },
+        {
+          "idx": 647,
+          "id": "train-003510-variant-3",
+          "group": "71fe16745b08",
+          "tokens": 4085
+        },
+        {
+          "idx": 2045,
+          "id": "train-003510",
+          "group": "71fe16745b08",
+          "tokens": 4085
+        },
+        {
+          "idx": 2684,
+          "id": "train-002109-variant-2",
+          "group": "SEC-NUM:train-002109",
+          "tokens": 3808
+        },
+        {
+          "idx": 1954,
+          "id": "train-002159-variant-0",
+          "group": "SEC-NUM:train-002159",
+          "tokens": 3716
+        },
+        {
+          "idx": 1757,
+          "id": "train-002159-variant-1",
+          "group": "SEC-NUM:train-002159",
+          "tokens": 3715
+        }
+      ]
+    },
+    "formula": {
+      "file": "data/gencache/cache_friendly_v2_cacheable/formula_grouped_optimized_cacheable.jsonl",
+      "sample_token_summary": {
+        "count": 2446,
+        "min": 177,
+        "p10": 192.0,
+        "p25": 198.0,
+        "median": 212.0,
+        "p75": 229.0,
+        "p90": 243.0,
+        "p95": 249.0,
+        "p99": 264.55,
+        "max": 296,
+        "mean": 214.91
+      },
+      "sample_bucket_counts": {
+        "<= 512": 2446
+      },
+      "group_count": 25,
+      "group_size_summary": {
+        "count": 25,
+        "min": 63,
+        "p10": 79.4,
+        "p25": 91,
+        "median": 97,
+        "p75": 112,
+        "p90": 116.2,
+        "p95": 124.6,
+        "p99": 126.0,
+        "max": 126,
+        "mean": 97.84
+      },
+      "group_mean_token_summary": {
+        "count": 25,
+        "min": 185.015873015873,
+        "p10": 194.81,
+        "p25": 199.92,
+        "median": 213.55,
+        "p75": 231.15,
+        "p90": 241.53,
+        "p95": 245.05,
+        "p99": 252.16,
+        "max": 254.34065934065933,
+        "mean": 214.94
+      },
+      "group_median_token_summary": {
+        "count": 25,
+        "min": 184,
+        "p10": 195.0,
+        "p25": 198,
+        "median": 214.0,
+        "p75": 230,
+        "p90": 240.2,
+        "p95": 245.0,
+        "p99": 249.8,
+        "max": 251,
+        "mean": 214.2
+      },
+      "group_mean_bucket_counts": {
+        "<= 512": 25
+      },
+      "longest_10_samples": [
+        {
+          "idx": 1954,
+          "id": "train-000371",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 296
+        },
+        {
+          "idx": 1967,
+          "id": "train-000371-variant-0",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 288
+        },
+        {
+          "idx": 1904,
+          "id": "train-000371-variant-1",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 284
+        },
+        {
+          "idx": 1898,
+          "id": "train-000371-variant-4",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 282
+        },
+        {
+          "idx": 1910,
+          "id": "train-000371-variant-5",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 280
+        },
+        {
+          "idx": 1882,
+          "id": "train-000486-variant-0",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 279
+        },
+        {
+          "idx": 1914,
+          "id": "train-000371-variant-2",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 278
+        },
+        {
+          "idx": 1913,
+          "id": "train-000486",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 277
+        },
+        {
+          "idx": 1920,
+          "id": "train-000486-variant-2",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 277
+        },
+        {
+          "idx": 1891,
+          "id": "train-000486-variant-4",
+          "group": "Interest Rate Parity (IRP)",
+          "tokens": 276
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local experiment outputs and generated artifacts
+.env
+outputs/*
+!outputs/.gitkeep
+baseline/
+LASER/*.jsonl
+LASER/data/
+LASER/search_engine/
+LASER/web_agent_site/search_engine/
+LASER/web_agent_site/**/__pycache__/
+LASER/data
+LASER/search_engine
+LASER/web_agent_site/search_engine
+*.log
+*.pid
+*.lock
+.DS_Store

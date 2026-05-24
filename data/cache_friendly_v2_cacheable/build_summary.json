@@ -1,0 +1,110 @@
+{
+  "formula": {
+    "source_file": "data/gencache/cache_friendly_v2/formula_grouped_optimized.jsonl",
+    "output_file": "data/gencache/cache_friendly_v2_cacheable/formula_grouped_optimized_cacheable.jsonl",
+    "num_records_original": 3970,
+    "num_records_selected": 2446,
+    "num_records_removed": 1524,
+    "num_groups_selected": 25,
+    "num_groups_removed": 16,
+    "selected_group_sizes": {
+      "Modigliani–Miller Theorem": 126,
+      "Current Ratio": 126,
+      "Dividend Yield": 119,
+      "Working Capital": 112,
+      "Dividend Payout Ratio": 112,
+      "Sortino Ratio": 112,
+      "Price-to-Earnings Ratio (P/E Ratio)": 112,
+      "Capital Asset Pricing Model (CAPM)": 105,
+      "Days Sales Outstanding (DSO)": 105,
+      "Accounts Receivable Turnover": 98,
+      "Quick Ratio (Acid-Test Ratio)": 98,
+      "Debt Service Coverage Ratio (DSCR)": 98,
+      "Inventory Turnover": 97,
+      "Net Profit Margin": 97,
+      "Beta": 91,
+      "Operating Margin": 91,
+      "Annual Percentage Rate (APR)": 91,
+      "Debt-to-Equity Ratio": 91,
+      "Interest Rate Parity (IRP)": 91,
+      "Earnings Per Share (EPS)": 90,
+      "Compound Interest": 84,
+      "Return on Equity (ROE)": 83,
+      "Gross Profit Margin": 77,
+      "Price-to-Book Ratio (P/B Ratio)": 77,
+      "Inflation Rate": 63
+    },
+    "removed_group_sizes": {
+      "Future Value (FV)": 126,
+      "Present Value (PV)": 112,
+      "Market Capitalization": 105,
+      "Free Cash Flow (FCF)": 105,
+      "Black-Scholes Option Pricing Model": 103,
+      "Simple Interest": 98,
+      "Gross Domestic Product (GDP)": 98,
+      "Sharpe Ratio": 98,
+      "WACC (Weighted Average Cost of Capital)": 91,
+      "Interest Coverage Ratio": 91,
+      "Return on Investment (ROI)": 91,
+      "Balance of Trade": 91,
+      "Return on Assets (ROA)": 91,
+      "Cost of Equity (Gordon Growth Model)": 91,
+      "EV/EBITDA": 70,
+      "Enterprise Value (EV)": 63
+    }
+  },
+  "SEC-NUM": {
+    "source_file": "data/gencache/cache_friendly_v2/SEC-NUM_grouped_optimized.jsonl",
+    "output_file": "data/gencache/cache_friendly_v2_cacheable/SEC-NUM_grouped_optimized_cacheable.jsonl",
+    "num_records_original": 3623,
+    "num_records_selected": 2766,
+    "num_records_removed": 857,
+    "num_groups_selected": 1,
+    "num_groups_removed": 4,
+    "selected_group_sizes": {
+      "sec_general_extraction": 2766
+    },
+    "removed_group_sizes": {
+      "lease_debt_maturity": 254,
+      "sale_purchase_investment": 224,
+      "stock_option_shares": 203,
+      "debt_maturity_schedule": 176
+    }
+  },
+  "CodeTAT-QA": {
+    "source_file": "data/gencache/cache_friendly_v2/CodeTAT-QA_grouped_optimized.jsonl",
+    "output_file": "data/gencache/cache_friendly_v2_cacheable/CodeTAT-QA_grouped_optimized_cacheable.jsonl",
+    "num_records_original": 4519,
+    "num_records_selected": 3836,
+    "num_records_removed": 683,
+    "num_groups_selected": 3,
+    "num_groups_removed": 2,
+    "selected_group_sizes": {
+      "difference:same_metric_two_periods": 2036,
+      "percentage_change:same_metric_two_periods": 1119,
+      "percentage_of:part_total": 681
+    },
+    "removed_group_sizes": {
+      "direct_lookup:single_value_lookup": 435,
+      "sum_total:multi_cell_total": 248
+    }
+  },
+  "CodeFinQA": {
+    "source_file": "data/gencache/cache_friendly_v2/CodeFinQA_grouped_optimized.jsonl",
+    "output_file": "data/gencache/cache_friendly_v2_cacheable/CodeFinQA_grouped_optimized_cacheable.jsonl",
+    "num_records_original": 3944,
+    "num_records_selected": 969,
+    "num_records_removed": 2975,
+    "num_groups_selected": 2,
+    "num_groups_removed": 3,
+    "selected_group_sizes": {
+      "percentage_change:same_metric_two_periods": 623,
+      "ratio:two_operand_ratio": 346
+    },
+    "removed_group_sizes": {
+      "percentage_of:part_total": 1294,
+      "direct_lookup:single_value_lookup": 1112,
+      "difference:same_metric_two_periods": 569
+    }
+  }
+}

@@ -1,0 +1,20 @@
+general:
+  project_path: "/home/ubuntu/GenCache/LASER"
+data:
+  data_path: "${general.project_path}/data"
+  global_cache_path: ${data.data_path}/global_cache_normal_large_scale
+  database_path: ${data.data_path}/database_normal_large_scale.pkl
+  results_path: ${general.project_path}/output_dir_normal_large_scale
+output:
+  output_path: "${general.project_path}/outputs/"
+  log_path: "${output.output_path}/logs/"
+llm:
+  temperature: 0.0
+  streaming: true
+global_cache:
+  use_cache: true
+  cache_path: "${data.global_cache_path}"
+  model: "gpt-4x"  # gpt-4x, llama
+database:
+  database_path: "${data.database_path}"
+

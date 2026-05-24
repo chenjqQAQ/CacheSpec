@@ -1,0 +1,6 @@
+.eggs/
+build/
+dist/
+llmlib/__pycache__/
+llmlib/.env
+llmlib.egg-info/
