@@ -5,7 +5,7 @@ MiniCache is a research prototype for evaluating LLM response caching. It provid
 The repository is organized for reproducible experiments:
 
 - `gencache_api_service/`: OpenAI-compatible MiniCache service.
-- `gen-cache/`: GenCache library components used by the original and modified modes.
+- `minicache/`: MiniCache library components used by the original and modified modes.
 - `LASER/`: generic prompt and WebShop runners.
 - `data/`: datasets used by the public experiments.
 - `data_gen/`: scripts for regenerating the generic and structural datasets.
@@ -61,7 +61,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -U pip
 pip install -r requirements.txt
-pip install -e gen-cache
+pip install -e minicache
 ```
 
 If you use WebShop, also follow the official WebShop setup instructions and install the required Java/Lucene and spaCy dependencies.
