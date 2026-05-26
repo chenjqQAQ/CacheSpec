@@ -12,7 +12,7 @@ WORKSPACE_DIR=${WORKSPACE_DIR:-"$ROOT/outputs/service_${MODE}_${TASK_TYPE}"}
 
 mkdir -p "$WORKSPACE_DIR"
 
-exec "$PYTHON" -m gencache_api_service.app \
+exec "$PYTHON" -m minicache_api_service.app \
   --mode "$MODE" \
   --task-type "$TASK_TYPE" \
   --workspace-dir "$WORKSPACE_DIR" \

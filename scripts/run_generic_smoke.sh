@@ -14,7 +14,7 @@ NUM_EXAMPLES=${NUM_EXAMPLES:-10}
 
 mkdir -p "$OUTPUT_DIR"
 
-"$PYTHON" -m gencache_api_service.app \
+"$PYTHON" -m minicache_api_service.app \
   --mode "$MODE" \
   --task-type "$TASK_TYPE" \
   --workspace-dir "$WORKSPACE_DIR" \

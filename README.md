@@ -4,7 +4,7 @@ MiniCache is a research prototype for evaluating LLM response caching. It provid
 
 The repository is organized for reproducible experiments:
 
-- `gencache_api_service/`: OpenAI-compatible MiniCache service.
+- `minicache_api_service/`: OpenAI-compatible MiniCache service.
 - `minicache/`: MiniCache library components used by the original and modified modes.
 - `LASER/`: generic prompt and WebShop runners.
 - `data/`: datasets used by the public experiments.

@@ -14,7 +14,7 @@ NUM_EXAMPLES=${NUM_EXAMPLES:-10}
 
 mkdir -p "$OUTPUT_DIR"
 
-"$PYTHON" -m gencache_api_service.app \
+"$PYTHON" -m minicache_api_service.app \
   --mode "$MODE" \
   --task-type "$TASK_TYPE" \
   --workspace-dir "$WORKSPACE_DIR" \
@@ -36,7 +36,7 @@ for _ in $(seq 1 60); do
   sleep 1
 done
 
-"$PYTHON" -m gencache_api_service.run_finance_task \
+"$PYTHON" -m minicache_api_service.run_finance_task \
   --task-type "$TASK_TYPE" \
   --data-file "$DATA_FILE" \
   --output-dir "$OUTPUT_DIR/eval" \
