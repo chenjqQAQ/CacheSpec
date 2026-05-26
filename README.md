@@ -1,6 +1,6 @@
 # MiniCache
 
-MiniCache is a research prototype for evaluating LLM response caching. It provides an OpenAI-compatible API service and task runners for several cache baselines and GenCache-style program-cache variants.
+MiniCache is a research prototype for evaluating LLM response caching. It provides an OpenAI-compatible API service and task runners for exact matching, semantic matching, reproduced GenCache baselines, and MiniCache program-cache variants.
 
 The repository is organized for reproducible experiments:
 
@@ -19,8 +19,8 @@ The API service supports the following modes:
 - `direct_llm`: always forwards the request to the backend LLM.
 - `exact_cache`: returns a cached answer only when the full prompt is exactly identical.
 - `gptcache`: returns a cached answer when the full-prompt embedding similarity exceeds a threshold.
-- `original`: GenCache-style rule/program cache using the original extraction path.
-- `modified`: GenCache-style rule/program cache using a small-model extraction path where supported.
+- `original`: reproduced GenCache baseline with the original rule-based extraction path.
+- `modified`: MiniCache program-cache path with small-model semantic variable extraction where supported.
 - `formula_modified_parallel`: parallel formula-task variant with concurrent extractor calls and optional cold-start monitoring.
 
 Supported task types are:
