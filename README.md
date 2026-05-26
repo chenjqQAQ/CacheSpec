@@ -178,3 +178,18 @@ The script reads model endpoints from `OPENAI_BASE_URL` or `MINICACHE_STRUCTURAL
 - All model endpoints should be provided through environment variables.
 - Experiment outputs are intentionally ignored by git.
 - Large WebShop indexes should be prepared separately and linked into the `LASER/` directory before running WebShop experiments.
+
+## Compute and Hardware
+
+The experiments are designed to run against OpenAI-compatible model servers.
+The paper experiments used NVIDIA A100 80GB GPUs, with one Qwen3-32B target
+model server per GPU and a Qwen3-1.7B small model for semantic variable
+extraction and speculative drafting. Exact GPU-hours depend on the selected
+task, concurrency setting, backend throughput, and whether only smoke tests or
+the full benchmark suite are reproduced. The released runners write timing and
+request-level logs that can be used to compute the exact GPU-hour budget for a
+new reproduction run.
+
+## License
+
+This repository is released under the MIT License. See `LICENSE` for details.
