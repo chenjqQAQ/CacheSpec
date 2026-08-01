@@ -6,7 +6,7 @@ PYTHON=${PYTHON:-python}
 MODE=${MODE:-direct_llm}
 TASK_TYPE=${TASK_TYPE:-formula}
 PORT=${PORT:-8010}
-MODEL=${MODEL:-${MINICACHE_MODEL:-qwen3-32b-fp8}}
+MODEL=${MODEL:-${CACHESPEC_MODEL:-qwen3-32b-fp8}}
 DATA_FILE=${DATA_FILE:-"$ROOT/data/cache_friendly_v2_cacheable/formula_grouped_optimized_cacheable.jsonl"}
 OUTPUT_DIR=${OUTPUT_DIR:-"$ROOT/outputs/${TASK_TYPE}_smoke_${MODE}"}
 WORKSPACE_DIR=${WORKSPACE_DIR:-"$OUTPUT_DIR/service"}
@@ -14,7 +14,7 @@ NUM_EXAMPLES=${NUM_EXAMPLES:-10}
 
 mkdir -p "$OUTPUT_DIR"
 
-"$PYTHON" -m minicache_api_service.app \
+"$PYTHON" -m cachespec_api_service.app \
   --mode "$MODE" \
   --task-type "$TASK_TYPE" \
   --workspace-dir "$WORKSPACE_DIR" \
@@ -36,7 +36,7 @@ for _ in $(seq 1 60); do
   sleep 1
 done
 
-"$PYTHON" -m minicache_api_service.run_finance_task \
+"$PYTHON" -m cachespec_api_service.run_finance_task \
   --task-type "$TASK_TYPE" \
   --data-file "$DATA_FILE" \
   --output-dir "$OUTPUT_DIR/eval" \

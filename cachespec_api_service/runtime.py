@@ -121,7 +121,7 @@ class ServiceStats:
             }
 
 
-class MiniCacheRuntime:
+class CacheSpecRuntime:
     def __init__(self, mode: str, task_type: str, workspace_dir: Path, default_model: str):
         self.mode = mode
         self.task_type = task_type
@@ -177,7 +177,7 @@ class MiniCacheRuntime:
         self._log(
             "INFO",
             (
-                f"starting MiniCache mode={mode} task_type={task_type} "
+                f"starting CacheSpec mode={mode} task_type={task_type} "
                 f"workspace={workspace_dir} model={default_model} "
                 f"fallback_base_url={base_url} thinking={self.enable_thinking} "
                 f"codegen_fallback={self.codegen_fallback} fallback_concurrency={self.fallback_concurrency}"

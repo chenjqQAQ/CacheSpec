@@ -132,7 +132,7 @@ def load_embedding_backend() -> Any:
         try:
             return SentenceTransformerBackend(model_path)
         except Exception as exc:
-            print(f"[MiniCache] sentence-transformer backend failed, using hash fallback: {exc}", flush=True)
+            print(f"[CacheSpec] sentence-transformer backend failed, using hash fallback: {exc}", flush=True)
     return HashEmbeddingBackend()
 
 
@@ -355,7 +355,7 @@ class RuleProgramCacheBaseline:
                         "metadata": {
                             "mode": self.mode,
                             "task_type": self.task_type,
-                            "generated_by": "MiniCache RuleProgramCacheBaseline",
+                            "generated_by": "CacheSpec RuleProgramCacheBaseline",
                         },
                         "created_at": time.time(),
                     }

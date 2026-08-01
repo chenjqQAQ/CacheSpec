@@ -6,7 +6,7 @@ PYTHON=${PYTHON:-python}
 MODE=${MODE:-exact_cache}
 TASK_TYPE=${TASK_TYPE:-generic}
 PORT=${PORT:-8000}
-MODEL=${MODEL:-${MINICACHE_MODEL:-qwen3-32b-fp8}}
+MODEL=${MODEL:-${CACHESPEC_MODEL:-qwen3-32b-fp8}}
 DATA_FILE=${DATA_FILE:-"$ROOT/data/generic/gt_param-w-synonym_data_large.jsonl"}
 OUTPUT_DIR=${OUTPUT_DIR:-"$ROOT/outputs/generic_smoke_${MODE}"}
 WORKSPACE_DIR=${WORKSPACE_DIR:-"$OUTPUT_DIR/service"}
@@ -14,7 +14,7 @@ NUM_EXAMPLES=${NUM_EXAMPLES:-10}
 
 mkdir -p "$OUTPUT_DIR"
 
-"$PYTHON" -m minicache_api_service.app \
+"$PYTHON" -m cachespec_api_service.app \
   --mode "$MODE" \
   --task-type "$TASK_TYPE" \
   --workspace-dir "$WORKSPACE_DIR" \

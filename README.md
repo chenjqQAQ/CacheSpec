@@ -1,11 +1,11 @@
-# MiniCache
+# CacheSpec
 
-MiniCache is a research prototype for evaluating LLM response caching. It provides an OpenAI-compatible API service and task runners for exact matching, semantic matching, reproduced GenCache baselines, and MiniCache program-cache variants.
+CacheSpec is a research prototype for evaluating LLM response caching. It provides an OpenAI-compatible API service and task runners for exact matching, semantic matching, reproduced GenCache baselines, and CacheSpec program-cache variants.
 
 The repository is organized for reproducible experiments:
 
-- `minicache_api_service/`: OpenAI-compatible MiniCache service.
-- `minicache/`: MiniCache library components used by the original and modified modes.
+- `cachespec_api_service/`: OpenAI-compatible CacheSpec service.
+- `cachespec/`: CacheSpec library components used by the original and modified modes.
 - `LASER/`: generic prompt and WebShop runners.
 - `data/`: datasets used by the public experiments.
 - `data_gen/`: scripts for regenerating the generic and structural datasets.
@@ -20,7 +20,7 @@ The API service supports the following modes:
 - `exact_cache`: returns a cached answer only when the full prompt is exactly identical.
 - `gptcache`: returns a cached answer when the full-prompt embedding similarity exceeds a threshold.
 - `original`: reproduced GenCache baseline with the original rule-based extraction path.
-- `modified`: MiniCache program-cache path with small-model semantic variable extraction where supported.
+- `modified`: CacheSpec program-cache path with small-model semantic variable extraction where supported.
 - `formula_modified_parallel`: parallel formula-task variant with concurrent extractor calls and optional cold-start monitoring.
 
 Supported task types are:
@@ -61,7 +61,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -U pip
 pip install -r requirements.txt
-pip install -e minicache
+pip install -e cachespec
 ```
 
 If you use WebShop, also follow the official WebShop setup instructions and install the required Java/Lucene and spaCy dependencies.
@@ -80,7 +80,7 @@ The service talks to any OpenAI-compatible chat-completions endpoint. Important 
 ```bash
 export OPENAI_BASE_URL=http://127.0.0.1:9000/v1
 export OPENAI_API_KEY=EMPTY
-export MINICACHE_MODEL=qwen3-32b-fp8
+export CACHESPEC_MODEL=qwen3-32b-fp8
 export SENTENCE_TRANSFORMER_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
@@ -101,21 +101,21 @@ export GENCACHE_CODEGEN_FALLBACK=false
 Start a direct-LLM service:
 
 ```bash
-MODE=direct_llm TASK_TYPE=generic PORT=8000 MODEL="$MINICACHE_MODEL" \
+MODE=direct_llm TASK_TYPE=generic PORT=8000 MODEL="$CACHESPEC_MODEL" \
   bash scripts/start_service.sh
 ```
 
 Start an exact-cache service:
 
 ```bash
-MODE=exact_cache TASK_TYPE=generic PORT=8000 MODEL="$MINICACHE_MODEL" \
+MODE=exact_cache TASK_TYPE=generic PORT=8000 MODEL="$CACHESPEC_MODEL" \
   bash scripts/start_service.sh
 ```
 
 Start a GPTCache-style service:
 
 ```bash
-MODE=gptcache TASK_TYPE=generic PORT=8000 MODEL="$MINICACHE_MODEL" \
+MODE=gptcache TASK_TYPE=generic PORT=8000 MODEL="$CACHESPEC_MODEL" \
   bash scripts/start_service.sh
 ```
 
@@ -163,14 +163,14 @@ Outputs are written under `outputs/` by default. Each service workspace records:
 The included generic datasets can be regenerated with:
 
 ```bash
-python data_gen/restore_minicache_generic_data.py \
+python data_gen/restore_cachespec_generic_data.py \
   --large-output data/generic/gt_param-w-synonym_data_large.jsonl \
   --structural-output data/generic/gt_param-w-synonym_data_large_structural_10k.jsonl \
   --workers 32 \
   --judge-workers 32
 ```
 
-The script reads model endpoints from `OPENAI_BASE_URL` or `MINICACHE_STRUCTURAL_BASE_URLS`.
+The script reads model endpoints from `OPENAI_BASE_URL` or `CACHESPEC_STRUCTURAL_BASE_URLS`.
 
 ## Notes For Reproducibility
 

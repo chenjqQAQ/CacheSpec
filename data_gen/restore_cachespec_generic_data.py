@@ -354,7 +354,7 @@ def main() -> None:
     parser.add_argument("--structural-base-url", default=os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:9000/v1"))
     parser.add_argument(
         "--structural-base-urls",
-        default=os.getenv("MINICACHE_STRUCTURAL_BASE_URLS", os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:9000/v1")),
+        default=os.getenv("CACHESPEC_STRUCTURAL_BASE_URLS", os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:9000/v1")),
     )
     parser.add_argument("--structural-api-key", default="EMPTY")
     parser.add_argument("--structural-model", default="qwen3-32b-fp8")

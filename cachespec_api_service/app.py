@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel, ConfigDict, Field
 
 from .formula_modified_runtime import FormulaModifiedRuntime
-from .runtime import MiniCacheRuntime
+from .runtime import CacheSpecRuntime
 
 
 class ChatRequest(BaseModel):
@@ -36,7 +36,7 @@ class ChatRequest(BaseModel):
 
 
 def create_app(runtime: Any) -> FastAPI:
-    app = FastAPI(title="MiniCache baseline service")
+    app = FastAPI(title="CacheSpec baseline service")
 
     @app.get("/health")
     def health() -> Dict[str, Any]:
@@ -69,7 +69,7 @@ def create_app(runtime: Any) -> FastAPI:
         if result.get("tool_calls") is not None:
             message["tool_calls"] = result["tool_calls"]
         return {
-            "id": f"minicache-{int(time.time() * 1000)}",
+            "id": f"cachespec-{int(time.time() * 1000)}",
             "object": "chat.completion",
             "created": int(time.time()),
             "model": req.model or runtime.default_model,
@@ -103,7 +103,7 @@ def main() -> None:
     parser.add_argument("--default-model", default="qwen3-32b-fp8")
     args = parser.parse_args()
 
-    runtime_cls = FormulaModifiedRuntime if args.mode == "formula_modified_parallel" else MiniCacheRuntime
+    runtime_cls = FormulaModifiedRuntime if args.mode == "formula_modified_parallel" else CacheSpecRuntime
     runtime = runtime_cls(mode=args.mode, task_type=args.task_type, workspace_dir=Path(args.workspace_dir), default_model=args.default_model)
     uvicorn.run(create_app(runtime), host=args.host, port=args.port)
 
