@@ -17,12 +17,48 @@ On a cache hit, a small model extracts semantic variables from the new request a
 
 Experiments on shopping-style requests, WebShop, Formula, and CodeTAT-QA show that CacheSpec preserves competitive task quality while improving effective cache reuse and reducing inference cost. It achieves up to approximately **3.1x lower latency** and approximately **2.8x higher throughput** than Program-of-Thoughts-style methods in the reported settings.
 
+## Framework
+
+<p align="center">
+  <img src="assets/cachespec_framework.png" alt="Overview of the CacheSpec framework" width="100%">
+</p>
+
+<p align="center"><em>Overview of CacheSpec. A reusable small model performs semantic variable extraction on the cache-hit path and speculative drafting for target-LLM generation. Validated programs are stored as parameterized cache entries and executed after variable binding.</em></p>
+
 ## Key Ideas
 
 - **Reusable program caches:** decouple reusable computation logic from request-specific values.
 - **Semantic variable extraction:** use a small model to bind new requests to cached programs despite surface-level prompt variations.
 - **Speculative generation:** reuse the same small model as a speculative drafter for target-LLM generation.
 - **Unified evaluation:** compare direct inference, exact caching, semantic caching, GenCache, CacheSpec, and applicable speculative-decoding variants through a shared OpenAI-compatible interface.
+
+## Main Results
+
+Representative results from the paper are summarized below. Accuracy, cache hit rate, and cache-hit accuracy are percentages; latency is the average end-to-end latency in seconds.
+
+| Benchmark | CacheSpec + SpecDec | Reference method | Main takeaway |
+| --- | --- | --- | --- |
+| Shopping-Struct | 96.66 Acc., 0.228s Lat., 98.03 Hit, 96.64 Hit Acc. | Direct LLM: 97.93 Acc., 0.913s Lat. | Approximately 4.0x lower latency with comparable accuracy. |
+| WebShop | 0.5760 Reward, 0.5797s Lat., 74.22 Hit | Direct LLM: 0.5728 Reward, 1.4070s Lat. | Comparable reward with approximately 2.4x lower latency. |
+| Formula | 94.19 Acc., 0.648s Lat., 87.16 Hit, 93.76 Hit Acc. | PoT-style: 94.69 Acc., 2.015s Lat. | Preserves PoT-style-level accuracy with approximately 3.1x lower latency. |
+| CodeTAT-QA | 70.41 Acc., 1.648s Lat., 57.48 Hit, 71.79 Hit Acc. | PoT-style: 71.53 Acc., 2.447s Lat. | Reuses cached programs for more than half of the requests. |
+
+### Parallel Serving and Cache Warm-up
+
+<p align="center">
+  <img src="assets/parallel_performance.png" alt="Parallel serving performance and cache warm-up dynamics" width="100%">
+</p>
+
+<p align="center"><em>CacheSpec reaches 18.56 requests/s at concurrency 16, compared with 6.51 requests/s for PoT-style inference. The cache is populated online and the cumulative hit rate rises as more requests are processed.</em></p>
+
+### Long-Context Robustness
+
+<p align="center">
+  <img src="assets/long_context_latency.png" alt="Latency under increasing context lengths" width="48%">
+  <img src="assets/long_context_quality.png" alt="Accuracy and cache quality under increasing context lengths" width="48%">
+</p>
+
+<p align="center"><em>CacheSpec remains faster than PoT-style inference from average 1K-token to 8K-token inputs while maintaining approximately 93% accuracy and cache-hit accuracy at the longest setting.</em></p>
 
 ## Paper
 
