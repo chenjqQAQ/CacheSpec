@@ -34,14 +34,11 @@ Experiments on shopping-style requests, WebShop, Formula, and CodeTAT-QA show th
 
 ## Main Results
 
-Representative results from the paper are summarized below. Accuracy, cache hit rate, and cache-hit accuracy are percentages; latency is the average end-to-end latency in seconds.
+<p align="center">
+  <img src="assets/main_results.png" alt="Main experimental results on Shopping-Full, Shopping-Struct, WebShop, Formula, and CodeTAT-QA" width="100%">
+</p>
 
-| Benchmark | CacheSpec + SpecDec | Reference method | Main takeaway |
-| --- | --- | --- | --- |
-| Shopping-Struct | 96.66 Acc., 0.228s Lat., 98.03 Hit, 96.64 Hit Acc. | Direct LLM: 97.93 Acc., 0.913s Lat. | Approximately 4.0x lower latency with comparable accuracy. |
-| WebShop | 0.5760 Reward, 0.5797s Lat., 74.22 Hit | Direct LLM: 0.5728 Reward, 1.4070s Lat. | Comparable reward with approximately 2.4x lower latency. |
-| Formula | 94.19 Acc., 0.648s Lat., 87.16 Hit, 93.76 Hit Acc. | PoT-style: 94.69 Acc., 2.015s Lat. | Preserves PoT-style-level accuracy with approximately 3.1x lower latency. |
-| CodeTAT-QA | 70.41 Acc., 1.648s Lat., 57.48 Hit, 71.79 Hit Acc. | PoT-style: 71.53 Acc., 2.447s Lat. | Reuses cached programs for more than half of the requests. |
+<p align="center"><em>Main experimental results on Shopping-Full, Shopping-Struct, WebShop, Formula, and CodeTAT-QA. Bold values denote the best results in each comparison.</em></p>
 
 ### Parallel Serving and Cache Warm-up
 
