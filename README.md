@@ -1,6 +1,39 @@
-# CacheSpec
+# CacheSpec: Finding the Sweet Spot for Small Models in Large Language Models
 
-CacheSpec is a research prototype for evaluating LLM response caching. It provides an OpenAI-compatible API service and task runners for exact matching, semantic matching, reproduced GenCache baselines, and CacheSpec program-cache variants.
+[![Conference](https://img.shields.io/badge/EMNLP-2026%20Main-blue)](https://2026.emnlp.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+This repository contains the official implementation and experimental artifacts for **CacheSpec: Finding the Sweet Spot for Small Models in Large Language Models**, accepted to the **EMNLP 2026 Main Conference**.
+
+## News
+
+- **August 2026:** CacheSpec was accepted to the EMNLP 2026 Main Conference.
+
+## Overview
+
+Large language model applications frequently receive requests that share the same computational structure while differing only in variables, constraints, or context. CacheSpec turns Program-of-Thoughts-style programs from one-time reasoning artifacts into reusable, parameterized program caches.
+
+On a cache hit, a small model extracts semantic variables from the new request and binds them to a validated cached program. On a cache miss, the target LLM produces a new answer or program, while the same small model can act as a speculative drafter. This design places small models in lightweight, structured, and verifiable roles instead of asking them to solve the full task independently.
+
+Experiments on shopping-style requests, WebShop, Formula, and CodeTAT-QA show that CacheSpec preserves competitive task quality while improving effective cache reuse and reducing inference cost. It achieves up to approximately **3.1x lower latency** and approximately **2.8x higher throughput** than Program-of-Thoughts-style methods in the reported settings.
+
+## Key Ideas
+
+- **Reusable program caches:** decouple reusable computation logic from request-specific values.
+- **Semantic variable extraction:** use a small model to bind new requests to cached programs despite surface-level prompt variations.
+- **Speculative generation:** reuse the same small model as a speculative drafter for target-LLM generation.
+- **Unified evaluation:** compare direct inference, exact caching, semantic caching, GenCache, CacheSpec, and applicable speculative-decoding variants through a shared OpenAI-compatible interface.
+
+## Paper
+
+**CacheSpec: Finding the Sweet Spot for Small Models in Large Language Models**<br>
+Jingquan Chen\*, Jie Feng\*†, Jinghua Piao†, Shaogang Hu, and Yong Li†<br>
+University of Electronic Science and Technology of China; Zhongguancun Academy; Tsinghua University<br>
+EMNLP 2026 Main Conference
+
+\* Equal contribution. † Corresponding authors.
+
+## Repository Structure
 
 The repository is organized for reproducible experiments:
 
@@ -189,6 +222,21 @@ task, concurrency setting, backend throughput, and whether only smoke tests or
 the full benchmark suite are reproduced. The released runners write timing and
 request-level logs that can be used to compute the exact GPU-hour budget for a
 new reproduction run.
+
+## Citation
+
+If you find CacheSpec useful in your research, please cite:
+
+```bibtex
+@inproceedings{chen2026cachespec,
+  title     = {{CacheSpec}: Finding the Sweet Spot for Small Models in Large Language Models},
+  author    = {Chen, Jingquan and Feng, Jie and Piao, Jinghua and Hu, Shaogang and Li, Yong},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2026}
+}
+```
+
+The citation will be updated with the official ACL Anthology metadata once the proceedings are available.
 
 ## License
 
